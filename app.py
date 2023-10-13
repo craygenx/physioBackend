@@ -12,7 +12,7 @@ from Models.Inventory import Inventory
 from Models.Invoice import Invoice
 
 app=Flask(__name__)
-CORS(app)
+CORS(app, origins=["https://physio-clinic.onrender.com", 'http://localhost:3000'], methods=['GET', 'POST', 'DELETE', 'PATCH'], supports_credentials=True)
 # ma = Marshmallow(app)
 ma = Marshmallow(app)
 app.config['SQLALCHEMY_DATABASE_URI']='postgresql://craygenx:GOBtmBu8h24dyjfBWV7aUJihCQ2TY5ty@dpg-ckkge6bj89us73aj8jj0-a.ohio-postgres.render.com/therapy_app'
