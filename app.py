@@ -127,7 +127,7 @@ def update_doctor(doctor_id):
 # Delete a Doctor
 @app.route('/doctors/<int:doctor_id>', methods=['DELETE'])
 def delete_doctor(doctor_id):
-    doctor = Doctor.query.get_or_404(doctor_id)
+    doctor = Doctor.query.get_or_404(int(doctor_id))
     db.session.delete(doctor)
     db.session.commit()
     return '', 204
