@@ -3,7 +3,9 @@ from flask_cors import CORS
 from firebase_config import db, auth
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=["https://physio-clinic.onrender.com", 'http://localhost:3000'], methods=['GET', 'POST', 'DELETE', 'PATCH'], supports_credentials=True)
+# CORS(app)
+
 
 # ============================
 # User Authentication Routes
